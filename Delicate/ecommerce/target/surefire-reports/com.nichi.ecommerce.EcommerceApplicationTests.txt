@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: com.nichi.ecommerce.EcommerceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.006 s <<< FAILURE! - in com.nichi.ecommerce.EcommerceApplicationTests
+com.nichi.ecommerce.EcommerceApplicationTests  Time elapsed: 0.004 s  <<< ERROR!
+java.lang.NoSuchMethodError: 'org.springframework.util.ReflectionUtils$MethodFilter org.springframework.util.ReflectionUtils$MethodFilter.and(org.springframework.util.ReflectionUtils$MethodFilter)'
+
