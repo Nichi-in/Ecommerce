@@ -73,6 +73,17 @@ public class AuthenticationToken {
 	public AuthenticationToken() {
 		super();
 	}
+
+	public AuthenticationToken(String token, User user) {
+		super();
+		this.token = token;
+		this.user = user;
+	}
+
+	public AuthenticationToken(String token) {
+		super();
+		this.token = token;
+	}
 	
 	
 	

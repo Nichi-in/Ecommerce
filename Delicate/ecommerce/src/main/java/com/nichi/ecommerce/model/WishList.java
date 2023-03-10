@@ -57,6 +57,7 @@ public class WishList {
 	public WishList(Product product) {
 		super();
 		this.product = product;
+		this.createdDate = new Date();
 	}
 
 	public Integer getId() {
