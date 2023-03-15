@@ -101,7 +101,7 @@ public class UserService {
 		}
 		
 		//return response
-		return new SigninResponseDto("SUccess",token.getToken());
+		return new SigninResponseDto("Success",token.getToken());
 	}
 
 }

@@ -31,17 +31,7 @@ public class WishListController {
         @Autowired
         private AuthenticationService authenticationService;
 
-//        @GetMapping("/{token}")
-//        public ResponseEntity<List<ProductDto>> getWishList(@PathVariable("token") String token) {
-//                int user_id = authenticationService.getUser(token).getId();
-//                List<WishList> body = wishListService.readWishList(user_id);
-//                List<ProductDto> products = new ArrayList<ProductDto>();
-//                for (WishList wishList : body) {
-//                        products.add(ProductService.getDtoFromProduct(wishList.getProduct()));
-//                }
-//
-//                return new ResponseEntity<List<ProductDto>>(products, HttpStatus.OK);
-//        }
+
 
         @PostMapping("/add")
         public ResponseEntity<ApiResponse> addWishList(@RequestBody Product product, @RequestParam("token") String token) {
@@ -51,7 +41,8 @@ public class WishListController {
         	authenticationService.authenticate(token);
         	
         	//find the user
-            User user = authenticationService.getUser(token);      WishList wishList = new WishList(user, product);
+            User user = authenticationService.getUser(token);     
+            WishList wishList = new WishList(user, product);
                 wishListService.createWishlist(wishList);
                 return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Add to wishlist"), HttpStatus.CREATED);
 
