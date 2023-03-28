@@ -27,7 +27,7 @@ public class AuthenticationService {
 	}
 
 	public User getUser(String token) {
-		AuthenticationToken authenticationToken = tokenRepository.findByToken(token);
+		final AuthenticationToken authenticationToken = tokenRepository.findByToken(token);
 		if(Objects.isNull(authenticationToken)) {
 			return null;
 		}
@@ -36,13 +36,16 @@ public class AuthenticationService {
 	
 	public void authenticate(String token) throws AuthenticationFailException{
 		//checking if the token is null or not
-		if(Objects.nonNull(token)) {
-			throw new AuthenticationFailException("Token not present");
+		System.out.println(token);
+		if(!Objects.nonNull(token)) {
+			System.out.println("inside");
+			throw new AuthenticationFailException("Token not present!!");
 		}
 		
 		//check user present or not
 		if(Objects.isNull(getUser(token))) {
-			throw new AuthenticationFailException("Token not valid");
+			
+			throw new AuthenticationFailException("Token not valid!!");
 		}
 	}
 }

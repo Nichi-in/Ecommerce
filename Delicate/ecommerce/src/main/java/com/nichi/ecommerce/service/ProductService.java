@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nichi.ecommerce.dto.ProductDto;
+import com.nichi.ecommerce.exceptions.ProductNotExistsException;
 import com.nichi.ecommerce.model.Category;
 import com.nichi.ecommerce.model.Product;
 import com.nichi.ecommerce.repository.ProductRepository;
@@ -63,5 +64,14 @@ public class ProductService {
 		product.setName(productDto.getName());
 		product.setPrice(productDto.getPrice());
 		productRepository.save(product);
+	}
+
+	public Product findById(Integer productId) throws ProductNotExistsException{
+		
+		Optional<Product> optional= productRepository.findById(productId);
+		if(optional.isEmpty()) {
+			throw new ProductNotExistsException("Product id is invalid" +productId);
+		}
+		return optional.get();
 	}
 }
