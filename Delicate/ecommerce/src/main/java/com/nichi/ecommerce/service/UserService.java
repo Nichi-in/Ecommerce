@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.nichi.ecommerce.dto.ResponseDto;
 import com.nichi.ecommerce.dto.user.SignInDto;
+import com.nichi.ecommerce.dto.user.SignOutDto;
 import com.nichi.ecommerce.dto.user.SigninResponseDto;
 import com.nichi.ecommerce.dto.user.SignupDto;
 import com.nichi.ecommerce.exceptions.AuthenticationFailException;
@@ -30,7 +31,6 @@ public class UserService {
 	
 	@Transactional
 	public ResponseDto signUp(SignupDto signupDto) {
-		
 		
 		//check if user already exist
 		if(Objects.nonNull(userRepository.findByEmail(signupDto.getEmail()))) {
@@ -89,7 +89,6 @@ public class UserService {
 			e.printStackTrace();
 		}
 			
-		
 		//compare the password in db
 		
 		//if password is matched
@@ -104,4 +103,37 @@ public class UserService {
 		return new SigninResponseDto("Success",token.getToken());
 	}
 
+	
+	
+	public String signOut(SignOutDto signOutDto) {
+		//find user by email
+		User user = userRepository.findByEmail(signOutDto.getEmail());
+		if(Objects.isNull(user)) {
+			throw new AuthenticationFailException("User is not valid");
+		}
+		
+		//hash the password
+//		try {
+//			if(!user.getPassword().equals(hashPassword(SignOutDto.getPassword()))) {
+//				throw new AuthenticationFailException("Wrong password");
+//
+//			}
+//		} catch (NoSuchAlgorithmException e) {
+//			
+//			e.printStackTrace();
+//		}
+//			
+		//compare the password in db
+		
+//		//if password is matched
+//		AuthenticationToken token = authenticationService.getToken(user);
+//		
+//		//retrieve the token 
+//		if(Objects.isNull(token)) {
+//			throw new CustomException("Token is not present");
+//		}
+		
+		//return response
+		return "User Logged Out Successfully";
+	}
 }
