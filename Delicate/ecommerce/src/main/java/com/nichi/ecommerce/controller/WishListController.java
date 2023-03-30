@@ -62,4 +62,19 @@ public class WishListController {
             return new ResponseEntity<>(productDtos, HttpStatus.OK);
         }
         
+      //delete a cart item for a user
+    	@DeleteMapping("/delete/{id}")
+    	public ResponseEntity<ApiResponse> deleteWishListItem(@PathVariable("id") Integer id,
+    														@RequestParam("token") String token){
+    		
+    		//Authenticate the token
+    				authenticationService.authenticate(token);
+    						
+    				//find the user
+    				User user = authenticationService.getUser(token); 
+    			
+    				wishListService.deleteWishListItem(id,user);
+    				return new ResponseEntity<>(new ApiResponse(true, "Item has been deleted"),HttpStatus.OK);
+
+    	}
 }
