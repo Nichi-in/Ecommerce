@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width-device-width, initial-scale=1.0">
+	<title>ShopVibes</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+
+
+</head>
+<body>
+<form action="shopVibe">
+	<div class="header">
+	<div class="container">
+	<div class="navbar">
+		<div class="logo">
+			<img src="images/logo.jpg" width="85px">
+		</div>
+		<nav>
+			<ul>
+				<li>
+					<a href="Home.html">Home </a> 
+					<a href="products.html">Products </a> 
+				<!--	<a href="#">About </a> -->
+				<!--	<a href="#">Contact </a> -->
+				<!--	<a href="#">Account </a> -->
+				</li>
+			</ul>
+		</nav>
+	<img src="images/menu1.png" class="menu-icon" onclick="menutoggle()">  
+	</div>
+	<div class="row">
+		<div class="col-2">
+			<h2>Admin magic at your service</h2>
+			<a href="#" class="btn">Add Products &#8594</a>
+		</div>
+	<!--	<div class="col-2">
+		<img src="images/frontimage.jpg">  
+		</div>  -->
+	</div>
+</div>
+</div>
+<!-- Featured Categories -->
+<!--<div class="categories">
+	<h2 class="title">Latest Product</h2>
+
+	<div class="small-container">
+	<div class="row">
+		<div class="col-3">
+			<img src="images/shirt1.jpg">
+	</div>
+	<div class="col-3">
+			<img src="images/shirt2.jpg">
+	</div>
+	<div class="col-3">
+			<img src="images/shirt3.jpg">
+	</div>
+</div>
+</div>
+<!-- featured Products -->
+<!--<div class="small-container">
+	<h2 class="title">Featured Products</h2>
+	<div class="row">
+		<div class="col-4">
+			<img src="images/red-t-shirt.jpg">
+			<h4>Red Printed T-Shirt</h4>
+			<p>$50</p>
+		</div>
+		<div class="col-4">
+			<img src="images/shoes.jpg">
+			<h4>Cassual Shoes</h4>
+			<p>$25</p>
+		</div>
+		<div class="col-4">
+			<img src="images/trimmer.jpg">
+			<h4>Philips Trimmer</h4>
+			<p>$150</p>
+		</div>
+		<div class="col-4">
+			<img src="images/toys.jpg">
+			<h4>Remote Car</h4>
+			<p>$500</p>
+		</div>
+	</div>
+</div> -->
+<!-- offers -->
+<!--<div class="offer">
+	<div clas="small-cointainer">
+		<div class="row">
+			<div class="col-2">
+				<img src="images/Mi-Band.jpg" class="offer-img">
+			</div>
+			<div class="col-2">
+				<p>Exclusively Available on ShopVibes</p>
+				<h1>Smart Band 4</h1>
+				<small>The Mi Smart Band 4 features a 39.9% larger Amoled color full-touch display with adjustable brightness, so everything is clear as can be.</small>
+				<a href="" class="btn">Buy Now</a>
+			</div>
+		</div>
+	</div>
+</div> -->
+<!-- companies
+<div class="brands">
+	<div class="small-container">
+		<div class="row">
+			<div class="col-5">
+				<img src="images/apple.png">
+			</div>
+			<div class="col-5">
+				<img src="images/gucci.png">
+			</div>
+			<div class="col-5">
+				<img src="images/hp.png">
+			</div>
+			<div class="col-5">
+				<img src="images/rebook.png">
+			</div>
+			<div class="col-5">
+				<img src="images/lg.png">
+			</div>
+		</div>
+	</div>
+</div> -->
+<!-- footer -->
+<div class="footer">
+	<div class="container">
+		<div class="row">
+			<div class="footer-col-1">
+				<h3>Useful Links</h3>
+				<ul>
+					<li>Coupons</li>
+					<li>Blog Post</li>
+					<li>Return policy</li>
+					<li>Join Affilate</li>
+				</ul>
+			</div>
+			<div class="footer-col-4">
+			<h3>Follow Us on</h3>
+				<ul>
+					<li>Facebook</li>
+					<li>Twitter</li>
+					<li>Instagram</li>
+					<li>YouTube</li>
+				</ul>
+				</div>
+				<hr>
+				<p class="copyright">Copyright 2023 - ShopVibes</p>
+		</div>
+	</div>
+</div>
+<script>
+	var MenuItem = document.getElementById("MenuItem");
+	MenuItem.style.maxHeight = "0px";
+	function menutoggle(){
+		if(MenuItem.style.maxHeight == "0px"){
+			MenuItem.style.maxHeight = "200px";
+		}else{
+			MenuItem.style.maxHeight = "0px";
+		}
+	}
+</script>
+</form>
+</body>
+</html>

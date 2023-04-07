@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+<display-name></display-name>
+<welcome-file-list>
+<welcome-file>Home.html</welcome-file>
+</welcome-file-list>
+</web-app>
